@@ -25,7 +25,7 @@ var pokeback = (function() {
         });
 
 
-         window.console.log(autoComplete);
+        window.console.log(autoComplete);
         addEventListeners();
 
     }
@@ -41,7 +41,9 @@ var pokeback = (function() {
     ///
     function onAutocompleteSelect(e) {
         var name = $("#enemy-choise").val();
-        var result = _.filter(pokemon, function(o) { return o.name.toLowerCase() === name.toLowerCase()})
+        var result = _.filter(pokemon, function(o) {
+            return o.name.toLowerCase() === name.toLowerCase()
+        })
         selection = result[0].type.toLowerCase();
         window.console.log(name, result, selection);
     }
@@ -68,13 +70,13 @@ var pokeback = (function() {
             // TweenMax.to(".inner-selector", 0.8, {
             //     top: "-120"
             // });
-             $($(".inner-selector").children()[1]).removeClass("hidden").addClass("selected");
+            $($(".inner-selector").children()[1]).removeClass("hidden").addClass("selected");
             window.console.log("type");
         } else if (item.hasClass("image") === true) {
             // TweenMax.to(".inner-selector", 0.8, {
             //     top: "-240"
             // });
-             $($(".inner-selector").children()[2]).removeClass("hidden").addClass("selected");
+            $($(".inner-selector").children()[2]).removeClass("hidden").addClass("selected");
             window.console.log("image");
         }
     }
@@ -82,7 +84,7 @@ var pokeback = (function() {
     function calculate(e) {
         var type = selection;
 
-        var arr = getDoubleDamage(type);
+        var arr = receiveDoubleDamage(type);//getDoubleDamage(type);
         var appropriateMoves = [];
         var tempType;
         var tempArr = [];
@@ -105,13 +107,25 @@ var pokeback = (function() {
         $(".resultsPokemons .gallery").append("<ul></ul>");
         for (var i = 0; i < results.length; i++) {
             $(".abilitiesx2 .gallery ul").append("<li class='" + results[i].type + "''>" + results[i].name + "<span class='badge " + results[i].type + "'>" + results[i].type.toUpperCase() + "</span>" + "</li>");
-            for(var j=0;j<results[i].pokemons.length;j++){
-                $(".resultsPokemons .gallery").append("<li class='resultPokemons'><img src='assets/pokemons/"+results[i].pokemons[j]+".png' />"+"</li>");
+            for (var j = 0; j < results[i].pokemons.length; j++) {
+                $(".resultsPokemons .gallery").append("<li class='resultPokemons'><img src='assets/pokemons/" + results[i].pokemons[j] + ".png' />" + "</li>");
             }
         }
     }
 
     function getDoubleDamage(type) {
+        var parts = type.split(",");
+        var extra = [];
+        window.console.log(parts);
+        if (parts.length > 1) {
+            for (var i = 0; i < parts.length; i++) {
+                extra.push(getDoubleDamage(parts[i]));
+            }
+
+            window.console.log(extra);
+            return _.flattenDeep(extra);
+        }
+
         switch (type) {
             case "normal":
                 return ["nothing"]
@@ -166,6 +180,77 @@ var pokeback = (function() {
                 break;
             case "fairy":
                 return ["fight", "dark", "dragon"]
+                break;
+        }
+    }
+
+    function receiveDoubleDamage(type) {
+        var parts = type.split(",");
+        var extra = [];
+        window.console.log(parts);
+        if (parts.length > 1) {
+            for (var i = 0; i < parts.length; i++) {
+                extra.push(receiveDoubleDamage(parts[i]));
+            }
+
+            window.console.log(extra);
+            return _.flattenDeep(extra);
+        }
+
+        switch (type) {
+            case "normal":
+                return ["fighting"]
+                break;
+            case "fire":
+                return ["water","ground", "rock"]
+                break;
+            case "electric":
+                return ["ground"]
+                break;
+            case "water":
+                return ["electric", "grass"]
+                break;
+            case "grass":
+                return ["fire", "ice","poison","flying"]
+                break;
+            case "ice":
+                return ["fire","fighting","rock","steel"]
+                break;
+            case "fight":
+                return ["flying","psychic","fairy"]
+                break;
+            case "poison":
+                return ["ground","psychic"]
+                break;
+            case "ground":
+                return ["water","grass","ice"]
+                break;
+            case "flying":
+                return ["electric","ice","rock"]
+                break;
+            case "psychic":
+                return ["bug","ghost","dark"]
+                break;
+            case "bug":
+                return ["fire","flying","rock"]
+                break;
+            case "rock":
+                return ["water","grass","fight","ground","steel"]
+                break;
+            case "ghost":
+                return ["ghost","dark"]
+                break;
+            case "dragon":
+                return ["dragon","ice","fairy"]
+                break;
+            case "dark":
+                return ["fight","bug","fairy"]
+                break;
+            case "steel":
+                return ["fight","ground"]
+                break;
+            case "fairy":
+                return ["poison","steel"]
                 break;
         }
     }
