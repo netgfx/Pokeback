@@ -111,7 +111,7 @@ var pokeback = (function() {
         for (var i = 0; i < results.length; i++) {
             $(".abilitiesx2 .gallery ul").append("<li class='" + results[i].type + "''>" + results[i].name + "<span class='badge " + results[i].type + "'>" + results[i].type.toUpperCase() + "</span>" + "</li>");
             for (var j = 0; j < results[i].pokemons.length; j++) {
-                $(".resultsPokemons .gallery").append("<li class='resultPokemons'><img src='assets/pokemons/" + results[i].pokemons[j] + ".png' />" + "</li>");
+                $(".resultsPokemons .gallery ul").append("<li class='resultPokemon'><img src='assets/pokemons/" + results[i].pokemons[j] + ".png' />" + "</li>");
             }
         }
 

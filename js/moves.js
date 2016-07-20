@@ -1,5 +1,5 @@
 var moves = [
-    {"name":"Acid", "type":"poison", "pokemons":["arbok", "ekans", "oddish", "gloom", "vileplume","bellspout","weepinbell","victreebel","tendacruel","grimmer","muk","koffing", "weezing"]},
+    {"name":"Acid", "type":"poison", "pokemons":["arbok", "ekans", "oddish", "gloom", "vileplume","bellsprout","weepinbell","victreebel","tentacruel","grimer","muk","koffing", "weezing"]},
     {"name":"Bite", "type":"dark", "pokemons":[]},
     {"name":"Bubble", "type":"water", "pokemons":[]},
     {"name":"Bug Bite", "type":"bug", "pokemons":[]},

@@ -60,6 +60,11 @@ body {
 #main-container .select-button {
   clear: both;
 }
+#results .resultsPokemons .gallery ul li {
+  float: left;
+  list-style: none;
+  margin-right: 25px;
+}
 #results ul {
   padding-left: 20px;
 }
