@@ -1,0 +1,150 @@
+body {
+  background-image: url("../assets/bg.jpg");
+}
+#main-container {
+  background: #ffffff;
+  width: 80%;
+  height: 80%;
+  position: relative;
+  margin: 0 auto;
+  border-radius: 5px;
+  position: absolute;
+  padding: 25px;
+  min-height: 600px;
+  overflow: auto;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+#main-container .tabs {
+  float: left;
+  clear: both;
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+#main-container .tabs .tab {
+  margin-right: 15px;
+}
+#main-container .selector {
+  width: 50%;
+  height: 200px;
+  border: 1px solid #fefefe;
+  float: left;
+  clear: both;
+  position: relative;
+}
+#main-container .selector .inner-selector {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+#main-container .selector .inner-selector .selection {
+  float: left;
+  height: 120px;
+  clear: both;
+  width: 100%;
+}
+#main-container .selector .inner-selector .selected {
+  display: block;
+}
+#main-container .selector .inner-selector .hidden {
+  display: none;
+}
+#main-container .select-button {
+  clear: both;
+}
+#results ul {
+  padding-left: 20px;
+}
+#results ul li {
+  background-color: #ffffff !important;
+}
+#results ul li .badge {
+  padding: 3px 6px 2px;
+  border-radius: 2px;
+  color: white;
+  min-width: 8rem;
+  text-align: center;
+  line-height: auto;
+  margin-left: 10px;
+  font-size: 12px;
+}
+#results ul .normal {
+  color: #A5A575;
+  background-color: #A5A575;
+}
+#results ul .fire {
+  color: #ED7C2B;
+  background-color: #ED7C2B;
+}
+#results ul .water {
+  color: #5A86EF;
+  background-color: #5A86EF;
+}
+#results ul .electric {
+  color: #F6CD27;
+  background-color: #F6CD27;
+}
+#results ul .grass {
+  color: #72C14A;
+  background-color: #72C14A;
+}
+#results ul .ice {
+  color: #90D5D5;
+  background-color: #90D5D5;
+}
+#results ul .fight {
+  color: #BA2F27;
+  background-color: #BA2F27;
+}
+#results ul .poison {
+  color: #993D99;
+  background-color: #993D99;
+}
+#results ul .ground {
+  color: #DEBC5F;
+  background-color: #DEBC5F;
+}
+#results ul .flying {
+  color: #A38DE6;
+  background-color: #A38DE6;
+}
+#results ul .psychic {
+  color: #F84A7E;
+  background-color: #F84A7E;
+}
+#results ul .bug {
+  color: #A2B11F;
+  background-color: #A2B11F;
+}
+#results ul .rock {
+  color: #B29B36;
+  background-color: #B29B36;
+}
+#results ul .ghost {
+  color: #6C5592;
+  background-color: #6C5592;
+}
+#results ul .dragon {
+  color: #6A30F7;
+  background-color: #6A30F7;
+}
+#results ul .dark {
+  color: #6D5646;
+  background-color: #6D5646;
+}
+#results ul .steel {
+  color: #B1B1CB;
+  background-color: #B1B1CB;
+}
+#results ul .fairy {
+  color: #E68EE6;
+  background-color: #E68EE6;
+}
