@@ -1,6 +1,6 @@
 var pokeback = (function() {
 
-    var selection;
+    var selection = "normal";
     var pokemonNames = [];
     var autoComplete;
     ///////////////////////////////////

@@ -1,10 +1,11 @@
 body {
     background-image: url("../assets/bg.jpg");
 }
+
 #main-container {
-    background: rgba(255, 255, 255,1);
+    background: rgba(255, 255, 255, 1);
     width: 80%;
-    height: 80%;
+    height: 90%;
     position: relative;
     margin: 0 auto;
     border-radius: 5px;
@@ -15,11 +16,20 @@ body {
     left: 50%;
     top: 50%;
     -webkit-transform: translate(-50%, -50%);
-       -moz-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-         -o-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 
+    .titleImg {
+        position: absolute;
+        right: 50px;
+        top: 30px;
+        width: 300px;
+    }
+    .container {
+        margin-left: 0;
+    }
     .tabs {
         float: left;
         clear: both;
@@ -32,11 +42,12 @@ body {
     }
     .selector {
         width: 50%;
-        height: 200px;
+        height: 150px;
         border: 1px solid #fefefe;
         float: left;
         clear: both;
         position: relative;
+        margin-top: 20px;
         .inner-selector {
             width: 100%;
             height: auto;
@@ -63,6 +74,17 @@ body {
 }
 
 #results {
+    .resultsPokemons {
+        .gallery {
+            ul {
+                li {
+                    float: left;
+                    list-style: none;
+                    margin-right: 25px;
+                }
+            }
+        }
+    }
     ul {
         padding-left: 20px;
         li {
